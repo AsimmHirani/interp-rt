@@ -1,12 +1,14 @@
 #ifndef INTERP_RT_INTERP_RT_H
 #define INTERP_RT_INTERP_RT_H
 
+#include <libfixmath/fix16.h>
+
 // If 1, we will extrapolate outside dataset
 #define INTERP_RT_EXTRAPOLATE (0)
 #define INTERP_RT_FRAC_BIT ((unsigned int) 16)
 #define INTERP_RT_ERR   (-1)
 
-typedef unsigned int INTERP_RT_dt; /* Default Datatype */
+typedef fix16_t INTERP_RT_dt; /* Default Datatype */
 
 /* Lookup table definition */
 typedef struct INTERP_RT_lut {
