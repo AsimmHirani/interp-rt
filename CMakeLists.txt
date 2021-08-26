@@ -9,6 +9,6 @@ include_directories(include lib)
 
 
 
-add_library(interp_rt STATIC src/interp-rt.c include/interp-rt.h)
+add_library(interp_rt STATIC src/interp-rt.c src/interp-rt.h)
 add_dependencies(interp_rt libfixmath)
 target_link_libraries(interp_rt libfixmath)
