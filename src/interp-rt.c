@@ -4,7 +4,7 @@
 #include <libfixmath/fract32.h>
 
 
-unsigned int monobound_binary_search(INTERP_RT_dt const * array, unsigned int array_size, INTERP_RT_dt key);
+static unsigned int monobound_binary_search(INTERP_RT_dt const * array, unsigned int array_size, INTERP_RT_dt key);
 
 INTERP_RT_dt INTERP_RT_interpolate1d(INTERP_RT_lut_t const * lut, INTERP_RT_dt x0) {
     unsigned int nn1_idx;
@@ -26,7 +26,7 @@ INTERP_RT_dt INTERP_RT_interpolate1d(INTERP_RT_lut_t const * lut, INTERP_RT_dt x
 
 // faster than the boundless binary search, more checks (From scandum's binary_search project, modified for nn algo)
 
-unsigned int monobound_binary_search(INTERP_RT_dt const * const array, unsigned int array_size, INTERP_RT_dt key)
+static unsigned int monobound_binary_search(INTERP_RT_dt const * const array, unsigned int array_size, INTERP_RT_dt key)
 {
     unsigned int bot, mid, top;
     // Check for empty array
