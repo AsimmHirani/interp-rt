@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(interp_rt)
 
 set(CMAKE_C_STANDARD 11)
-set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -pedantic -Os")
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -pedantic -O0")
 
 include_directories(include lib src)
 

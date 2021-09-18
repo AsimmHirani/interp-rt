@@ -18,9 +18,9 @@ INTERP_RT_lut_t lut = {
 char const * filename = "test-result.csv";
 
 float start = 0.0f;
-float end = 2.0*3.14159;
+float end = 10;
 
-float dt = 0.0001f;
+float dt = 0.01f;
 
 std::vector<float> x0;
 std::vector<float> y;

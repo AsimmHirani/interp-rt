@@ -6,8 +6,9 @@ import scipy.interpolate as sci_interp
 
 def main():
     df = pd.DataFrame()
-    df['x'] = np.arange(2*np.pi,step=np.pi/10)
-    df['y'] = np.sin(df['x'])
+    df['x'] = np.linspace(0,10,15)
+    df['y'] = -(df['x']-5)**2+25
+    print(df)
     i = interp(df,True)
     i.write_out('test')
 
