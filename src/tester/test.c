@@ -1,4 +1,4 @@
-#include "test.h"
+#include "tester/test.h"
 
 float interp_rt_x[] = {
 	0.0f,

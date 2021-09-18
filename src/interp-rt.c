@@ -14,7 +14,7 @@ INTERP_RT_dt INTERP_RT_interpolate1d(INTERP_RT_lut_t const * lut, INTERP_RT_dt x
     }
     nn1_idx = monobound_binary_search(lut->x,lut->len,x0); // this is the lower side of the interval
     diff = x0-lut->x[nn1_idx];
-    // retrieve spline coefficients from memory
+    // retrieve spline coefficients from memory (move over nn1_idx rows of lut->pow+1 cols. Data width sizeof(...)
     coeffs = (lut->c+nn1_idx*(lut->pow+1)*sizeof(INTERP_RT_coeff_dt));
     INTERP_RT_dt rvalue = 0;
 
