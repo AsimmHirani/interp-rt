@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 def main():
     df = pd.DataFrame()
-    df['x'] = np.linspace(0,10,15)
+    df['x'] = np.linspace(0,10,5)
     df['y'] = -(df['x']-5)**2+25
     print(df)
     i = interp(df,True)
