@@ -7,6 +7,7 @@ INTERP_RT_dt INTERP_RT_interpolate1d(INTERP_RT_lut_t const * lut, INTERP_RT_dt x
     unsigned int nn1_idx;
     INTERP_RT_dt diff;
     INTERP_RT_coeff_dt* coeffs;
+    // If the input position is out of bounds, return err
     if (x0 < lut->x[0] || x0 > lut->x[lut->len-1]) {
         if (INTERP_RT_EXTRAPOLATE == 0)
             return INTERP_RT_ERR;
@@ -15,7 +16,7 @@ INTERP_RT_dt INTERP_RT_interpolate1d(INTERP_RT_lut_t const * lut, INTERP_RT_dt x
     nn1_idx = monobound_binary_search(lut->x,lut->len,x0); // this is the lower side of the interval
     diff = x0-lut->x[nn1_idx];
     // retrieve spline coefficients from memory (move over nn1_idx rows of lut->pow+1 cols. Data width sizeof(...)
-    coeffs = (lut->c+nn1_idx*(lut->pow+1)*sizeof(INTERP_RT_coeff_dt));
+    coeffs = (lut->c+nn1_idx*(lut->pow+1));
     INTERP_RT_dt rvalue = 0;
 
     // Evaluate spline coefficients
