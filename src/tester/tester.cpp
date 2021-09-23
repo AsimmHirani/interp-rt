@@ -20,10 +20,7 @@ char const * filename = "test-result.csv";
 float start = 0.0f;
 float end = 10.0f;
 
-float dt = 0.001f;
-
-std::vector<float> x0;
-std::vector<float> y;
+float dt = 0.000001f;
 
 int main() {
     std::ofstream outfile(filename);
@@ -31,9 +28,7 @@ int main() {
     // make the vectors
     float x = start;
     while (x < end) {
-        x0.push_back(x);
-        y.push_back(INTERP_RT_interpolate1d(&lut, x));
-        outfile << x << ',' << y.back() << '\n';
+        outfile << x << ',' << INTERP_RT_interpolate1d(&lut, x) << '\n';
         x += dt;
     }
 
