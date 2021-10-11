@@ -25,15 +25,14 @@ INTERP_RT_dt INTERP_RT_interpolate1d(INTERP_RT_lut_t const * lut, INTERP_RT_dt x
     diff = x0-lut->x[nn1_idx];
     // retrieve spline coefficients from memory (move over nn1_idx rows of lut->pow+1 cols. Data width sizeof(...)
     coeffs = (lut->c+nn1_idx*(lut->pow+1));
-
-
     return spl_eval(coeffs,lut->pow+1,diff);
 }
 
 // faster than the boundless binary search, more checks (From scandum's binary_search project, modified for nn algo)
 
-static unsigned int monobound_binary_search(INTERP_RT_dt const * const array, unsigned int array_size, INTERP_RT_dt key)
-{
+static unsigned int monobound_binary_search(INTERP_RT_dt const * const array,
+                                            unsigned int array_size,
+                                            INTERP_RT_dt key) {
     unsigned int bot, mid, top;
     // Check for empty array
     if (array_size == 0) {
